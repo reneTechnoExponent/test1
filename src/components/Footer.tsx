@@ -1,46 +1,43 @@
-import React from 'react'
+import React from 'react';
 
-const Footer = () => {
+export const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-gray-900 text-gray-300 py-12">
+      <div className="container-custom">
+        <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <h4 className="text-xl font-bold mb-4">FitLife Gym</h4>
-            <p className="text-gray-400">Transform your body and mind with our expert trainers and modern facilities.</p>
+            <h3 className="text-xl font-bold text-white mb-4">FitLife</h3>
+            <p className="text-sm">Transform your body and mind with our comprehensive fitness programs.</p>
           </div>
           <div>
-            <h4 className="text-xl font-bold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white">Programs</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Schedule</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Pricing</a></li>
+            <h4 className="font-semibold text-white mb-4">Programs</h4>
+            <ul className="space-y-2 text-sm">
+              <li><a href="#" className="hover:text-white">Strength Training</a></li>
+              <li><a href="#" className="hover:text-white">HIIT Workouts</a></li>
+              <li><a href="#" className="hover:text-white">Yoga Classes</a></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-xl font-bold mb-4">Contact</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li>123 Fitness Street</li>
-              <li>New York, NY 10001</li>
-              <li>contact@fitlife.com</li>
-              <li>(555) 123-4567</li>
+            <h4 className="font-semibold text-white mb-4">Company</h4>
+            <ul className="space-y-2 text-sm">
+              <li><a href="#" className="hover:text-white">About Us</a></li>
+              <li><a href="#" className="hover:text-white">Careers</a></li>
+              <li><a href="#" className="hover:text-white">Contact</a></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-xl font-bold mb-4">Follow Us</h4>
+            <h4 className="font-semibold text-white mb-4">Follow Us</h4>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white">Instagram</a>
-              <a href="#" className="text-gray-400 hover:text-white">Facebook</a>
-              <a href="#" className="text-gray-400 hover:text-white">Twitter</a>
+              <a href="#" className="hover:text-white">Instagram</a>
+              <a href="#" className="hover:text-white">Twitter</a>
+              <a href="#" className="hover:text-white">Facebook</a>
             </div>
           </div>
         </div>
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 FitLife Gym. All rights reserved.</p>
+        <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
+          © 2024 FitLife. All rights reserved.
         </div>
       </div>
     </footer>
-  )
-}
-
-export default Footer
+  );
+};

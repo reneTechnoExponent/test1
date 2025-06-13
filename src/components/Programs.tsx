@@ -1,46 +1,54 @@
-import React from 'react'
+import React from 'react';
 
-const Programs = () => {
+export const Programs: React.FC = () => {
   const programs = [
     {
       title: "Strength Training",
-      description: "Build muscle and increase your strength with our comprehensive program",
-      image: "https://images.unsplash.com/photo-1534371020656-6b85825f2b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+      price: "$49",
+      duration: "per month",
+      features: ["Customized workout plans", "Progress tracking", "Nutrition guide"]
     },
     {
-      title: "Cardio Fitness",
-      description: "Improve your endurance and heart health with varied cardio workouts",
-      image: "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+      title: "HIIT Program",
+      price: "$59",
+      duration: "per month",
+      features: ["High-intensity workouts", "Cardio optimization", "Weekly challenges"]
     },
     {
-      title: "HIIT Classes",
-      description: "High-intensity interval training for maximum fat burn",
-      image: "https://images.unsplash.com/photo-1549576490-b0b4831ef60a?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+      title: "Yoga & Wellness",
+      price: "$39",
+      duration: "per month",
+      features: ["Guided sessions", "Meditation classes", "Flexibility training"]
     }
-  ]
+  ];
 
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Programs</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section id="programs" className="py-20 bg-gray-50">
+      <div className="container-custom">
+        <h2 className="text-4xl font-bold text-center mb-12">Our Programs</h2>
+        <div className="grid md:grid-cols-3 gap-8">
           {programs.map((program, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-lg">
-              <img 
-                src={program.image} 
-                alt={program.title}
-                className="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
-                <h3 className="text-xl font-semibold text-white mb-2">{program.title}</h3>
-                <p className="text-white/80">{program.description}</p>
+            <div key={index} className="card hover:shadow-lg transition-shadow">
+              <h3 className="text-2xl font-bold mb-4">{program.title}</h3>
+              <div className="text-3xl font-bold text-primary-600 mb-2">
+                {program.price}
+                <span className="text-sm text-gray-500"> {program.duration}</span>
               </div>
+              <ul className="space-y-3 mb-6">
+                {program.features.map((feature, i) => (
+                  <li key={i} className="flex items-center">
+                    <svg className="w-5 h-5 text-primary-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <button className="btn btn-primary w-full">Join Now</button>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
-}
-
-export default Programs
+  );
+};
