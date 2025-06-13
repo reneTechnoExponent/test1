@@ -1,18 +1,21 @@
 import * as React from 'react'
 import './App.css'
-import { Header } from './components/Header'
-import { Counter } from './components/Counter'
-import { useLocalStorage } from './hooks/useLocalStorage'
+import Hero from './components/Hero'
+import Features from './components/Features'
+import Programs from './components/Programs'
+import Testimonials from './components/Testimonials'
+import Pricing from './components/Pricing'
+import Footer from './components/Footer'
 
 export function App() {
-  const [count, setCount] = useLocalStorage('count', 0)
-
   return (
     <div className="App">
-      <Header title="Vite + React + TypeScript" />
-      <main>
-        <Counter count={count} setCount={setCount} />
-      </main>
+      <Hero />
+      <Features />
+      <Programs />
+      <Testimonials />
+      <Pricing />
+      <Footer />
     </div>
   )
 }
